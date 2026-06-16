@@ -1,0 +1,23 @@
+baseURL = 'https://opentechschool-zurich.github.io/'
+locale = 'en-us'
+title = 'OpenTechSchool Zürich'
+# theme = 'ananke'
+theme = 'congo'
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.main]]
+  name = 'About'
+  url = '/about'
+  weight = 20
+[[menu.main]]
+  name = 'Learning'
+  url = '/learning'
+  weight = 30
+[[menu.main]]
+  name = 'Contact'
+  url = '/contact'
+  weight = 40
