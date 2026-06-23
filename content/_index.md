@@ -1,9 +1,5 @@
-+++
-date = '2026-06-09T20:09:02+02:00'
-draft = false
-title = ''
-+++
+We are a friendly group of tech enthausiast that meet regularly to work on projects, discuss technologies and help each other.
 
-OpenTechSchool is a worldwide community initiative offering free programming workshops and meetups to technology enthusiasts of all genders, backgrounds, and experience levels. OTS’ main goal is to create a friendly learning environment where no one feels shy about asking any question. Everyone is invited to participate, whether as a coach or a learner, and get in contact to organize new OTS events.
+We organize events to learn, collaborate and meet other learners. If you interested in tech, would like to try out programming or if you need help with your project, feel free to join the community.
 
-![Alt text](images/ots-at-liip.jpg)
+![Alt text](/images/ots-at-liip.jpg)

@@ -1,0 +1,25 @@
+[[main]]
+  name = 'Home'
+  pageRef = '_index'
+  weight = 10
+[[main]]
+  name = 'Über uns'
+  pageRef = 'about'
+  weight = 20
+[[main]]
+  name = 'Lernen'
+  pageRef = 'learning'
+  weight = 30
+[[main]]
+  name = 'Blog'
+  pageRef = 'posts'
+  weight = 40
+[[main]]
+  name = 'Kontakt'
+  pageRef = 'contact'
+  weight = 50
+[[main]]
+  identifier = "locale"
+  weight = 100
+  [main.params]
+    action = "locale"
