@@ -1,0 +1,37 @@
+{{- /* inspired by https://raw.githubusercontent.com/hanzei/hugo-component-osm/ */ -}}
+
+{{ $bbox := .Get "bbox" }}
+{{ $long := .Get "long" }}
+{{ $lat := .Get "lat" }}
+{{ $layer := .Get "layer" | default "mapnik" }}
+{{ $style := .Get "style" | default "border: 1px solid black" }}
+
+{{- /* TODO: we need better defaults and catch % and px */ -}}
+{{- /*
+{{ $width := .Get "width" | default "100%" }}
+{{ $height := .Get "height" | default "600px" }}
+*/ -}}
+
+{{ $width := .Get "width" | default "425" }}
+{{ $height := .Get "height" | default "350" }}
+
+
+{{ $lat = cast.ToFloat $lat }}
+{{ $long = cast.ToFloat $long }}
+
+{{ $zoom := .Get "zoom" | default 17 }}
+
+{{ $metersPerPixel := math.Product (math.Cos (math.ToRadians $lat)) 2 math.Pi 6378137 }}
+{{ $metersPerPixel := math.Div $metersPerPixel (math.Product 256 (math.Pow 2 $zoom) ) }}
+{{ $widthMeters := math.Product (cast.ToInt $width) $metersPerPixel }}
+{{ $heightMeters := math.Product (cast.ToInt $height) $metersPerPixel }}
+
+{{ $deltaLat := math.Div $heightMeters 2 111320 }}
+{{ $deltaLong := math.Div $widthMeters 2 111320 (math.Cos (math.ToRadians $lat)) }}
+
+{{ $minLat := math.Sub $lat $deltaLat }}
+{{ $minLong := math.Sub $long $deltaLong }}
+{{ $maxLat := math.Sum $lat $deltaLat }}
+{{ $maxLong := math.Sum $long $deltaLong }}
+
+<iframe width="{{ $width }}" height="{{ $height }}" src="https://www.openstreetmap.org/export/embed.html?bbox={{ $minLong }}%2C{{ $minLat }}%2C{{ $maxLong }}%2C{{ $maxLat }}&amp;layer=mapnik&amp;marker={{ $lat }}%2C{{ $long }}" style="{{ $style }}"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat={{ $lat }}&amp;mlon={{ $long }}#map={{ $zoom }}/{{ $lat }}/{{ $long }}">View Larger Map</a></small>
