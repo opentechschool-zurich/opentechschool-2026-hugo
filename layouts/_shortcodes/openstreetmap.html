@@ -34,4 +34,4 @@
 {{ $maxLat := math.Sum $lat $deltaLat }}
 {{ $maxLong := math.Sum $long $deltaLong }}
 
-<iframe width="{{ $width }}" height="{{ $height }}" src="https://www.openstreetmap.org/export/embed.html?bbox={{ $minLong }}%2C{{ $minLat }}%2C{{ $maxLong }}%2C{{ $maxLat }}&amp;layer=mapnik&amp;marker={{ $lat }}%2C{{ $long }}" style="{{ $style }}"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat={{ $lat }}&amp;mlon={{ $long }}#map={{ $zoom }}/{{ $lat }}/{{ $long }}">View Larger Map</a></small>
+<iframe width="{{ $width }}" height="{{ $height }}" src="https://www.openstreetmap.org/export/embed.html?bbox={{ $minLong }}%2C{{ $minLat }}%2C{{ $maxLong }}%2C{{ $maxLat }}&amp;layer={{ $layer }}&amp;marker={{ $lat }}%2C{{ $long }}" style="{{ $style }}"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat={{ $lat }}&amp;mlon={{ $long }}#map={{ $zoom }}/{{ $lat }}/{{ $long }}">View Larger Map</a></small>
