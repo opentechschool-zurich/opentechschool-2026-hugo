@@ -4,6 +4,19 @@
 
 - Add the Congo theme to the `theme/` folder.
 
+### The template
+
+We are using the "Congo" template.
+
+- https://jpanther.github.io/congo/docs/configuration/
+
+## Specific features
+
+
+### Listing all recent articles
+
+We have a custom _partial_ for the _recent articles_ that shows all recent articles, regardless of their language.
+
 ## Map
 
 I've created a shortcode for embedding a map from OpenStreetMap:
@@ -45,3 +58,8 @@ Possible improvements:
 Shortcodes can be used to add _custom_ items in the markdown pages.
 
 - https://gohugo.io/templates/shortcode/
+
+## TODO
+
+- [x] Show the list of all posts in the german posts page
+- [ ] Fill the content

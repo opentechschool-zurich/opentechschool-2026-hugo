@@ -3,12 +3,8 @@
     {{ i18n "shortcode.recent_articles" | emojify }}
   </h2>
 
-{{ $pages := where site.AllPages "Kind" "page" }}
-{{ $pages := where $pages "Section" "posts" }}
-{{ $pages = sort $pages "Date" "desc" }}
-
-{{ range first .Site.Params.homepage.recentLimit $pages }}
-{{ partial "article-link.html" . }}
-{{ end }}
+  {{ range where site.RegularPages "Section" "posts" | first .Site.Params.homepage.recentLimit }}
+    {{ partial "article-link.html" . }}
+  {{ end }}
 
 {{ end }}

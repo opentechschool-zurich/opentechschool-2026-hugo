@@ -11,7 +11,7 @@
   pageRef = 'learning'
   weight = 30
 [[main]]
-  name = 'Blog'
+  name = 'News'
   pageRef = 'posts'
   weight = 40
 [[main]]
