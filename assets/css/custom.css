@@ -1,0 +1,5 @@
+/* the the image in the figure following the p.sponsors-logo (https://github.com/jpanther/congo/issues/1188) */
+p.sponsors-logo + figure picture img {
+  max-width: 200px;
+  margin: 0px; /* undo the margin:auto that centers the img */
+}

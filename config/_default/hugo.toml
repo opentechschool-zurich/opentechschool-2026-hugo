@@ -18,3 +18,11 @@ enableMissingTranslationPlaceholders = false
   [languages.en]
     label = 'English'
     weight = 1
+
+[markup.goldmark.parser.attribute]
+    block = true
+    title = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
