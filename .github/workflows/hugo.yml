@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.161.1
+      CONGO_VERSION: 2.14.0
       TZ: Europe/Oslo
     steps:
       - name: Checkout
@@ -42,6 +43,13 @@ jobs:
       - name: Verify installations
         run: |
           echo "Hugo: $(hugo version)"
+      - name: Install Congo
+        run: |
+          curl -sLJO "https://github.com/jpanther/congo/archive/refs/tags/v${CONGO_VERSION}.tar.gz"
+          mkdir "${HOME}/.local/hugo/themes"
+          tar -C "${HOME}/.local/hugo/themes/" -xf "congo-_${CONGO_VERSION}.tar.gz"
+          mv "${HOME}/.local/hugo/themes/congo-${CONGO_VERSION}" "${HOME}/.local/hugo/themes/congo" 
+          rm "congo-${HUGO_VERSION}.tar.gz"
       - name: Configure Git
         run: |
           git config core.quotepath false
