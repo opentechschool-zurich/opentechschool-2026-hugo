@@ -49,7 +49,7 @@ jobs:
           mkdir "${HOME}/.local/hugo/themes"
           tar -C "${HOME}/.local/hugo/themes/" -xf "congo-${CONGO_VERSION}.tar.gz"
           mv "${HOME}/.local/hugo/themes/congo-${CONGO_VERSION}" "${HOME}/.local/hugo/themes/congo" 
-          rm "congo-${HUGO_VERSION}.tar.gz"
+          rm "congo-${CONGO_VERSION}.tar.gz"
       - name: Configure Git
         run: |
           git config core.quotepath false
