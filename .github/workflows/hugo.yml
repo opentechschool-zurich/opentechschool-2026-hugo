@@ -46,9 +46,9 @@ jobs:
       - name: Install Congo
         run: |
           curl -sLJO "https://github.com/jpanther/congo/archive/refs/tags/v${CONGO_VERSION}.tar.gz"
-          mkdir "${HOME}/.local/hugo/themes"
-          tar -C "${HOME}/.local/hugo/themes/" -xf "congo-${CONGO_VERSION}.tar.gz"
-          mv "${HOME}/.local/hugo/themes/congo-${CONGO_VERSION}" "${HOME}/.local/hugo/themes/congo" 
+          mkdir -p themes
+          tar -xzf "congo-${CONGO_VERSION}.tar.gz"
+          mv "congo-${CONGO_VERSION}" "themes/congo" 
           rm "congo-${CONGO_VERSION}.tar.gz"
       - name: Configure Git
         run: |
