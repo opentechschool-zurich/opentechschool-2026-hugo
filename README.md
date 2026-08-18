@@ -59,7 +59,17 @@ Shortcodes can be used to add _custom_ items in the markdown pages.
 
 - https://gohugo.io/templates/shortcode/
 
+## Github Pages
+
+- If the README is published, instead of the page, ensure that in the _Repository_'s settings, in the _Pages_ section, the _Build and deployment_ source is set to "GitHub Actions".  
+If there is a `.yml` file in the `.github/workflows/`, it will be used starting from the next push.
+
 ## TODO
 
 - [x] Show the list of all posts in the german posts page
 - [ ] Fill the content
+
+
+## Notes
+
+
